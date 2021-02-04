@@ -1,53 +1,49 @@
-<%= @child.name %>さんのくだもの
-<div>
-<%= @child.tree.name %>
-</div>
-<% if @child.tree_id == 1 %>
-<div>
-いち
-<%= image_tag "kajuen_ringo.png" %>
-</div>
-<% end %>
-<% if @child.tree_id == 2 %>
-<div>
-に
-<%= image_tag "kajuen_budou.png" %>
-</div>
-<% end %>
-<% if @child.tree_id == 3 %>
-<div>
-さん
-<%= image_tag "banana_tree.png" %>
-</div>
-<% end %>
-<div>
-<%= @child.name %>さんのもくひょう
-</div>
-<% @task.each do |task| %>
-  <% if @child.id == task.child_id && task.child_id != nil %>
-    <div>
-    <%= task.task1 %>
-    </div>
-    <div>
-    <%= task.task2 %>
-    </div>
-    <div>
-    <%= task.task3 %>
-    </div>
-    <div>
-    <%= task.task4 %>
-    </div>
-    <div>
-    <%= task.task5 %>
-    </div>
-    <div>
-    <%= task.task6 %>
-    </div>
-    <div>
-    <%= link_to "もくひょうをかえる", edit_child_task_path(@child.id,task.id) %>
+<div class='child-task-show' >
+  <div class=child-task-name-box>
+    <%= link_to @child.name, '#', class: 'child-task-name' %>さんのくだものの「き」は
+  </div>
+  <div class='child-task-child-name-box'>
+    <%= link_to @child.tree.name, '#', class: 'child-task-child-name' %>だよ
+  </div>
+
+  <% if @child.tree_id == 1 %>
+    <div class='child-task-tree-name-box'>
+      <%= image_tag("kajuen_ringo.png", class: 'child-task-image-sized') %>
     </div>
   <% end %>
-<% end %>
-<div>
-<%= link_to "もくひょうをきめる", new_child_task_path(@child.id) %>
+
+  <% if @child.tree_id == 2 %>
+    <div class='child-task-tree-name-box'>
+      <%= image_tag("kajuen_budou.png", class: 'child-task-image-sized') %>
+    </div>
+  <% end %>
+
+  <% if @child.tree_id == 3 %>
+    <div class='child-task-tree-name-box'>
+      <%= image_tag("banana_tree.png", class: 'child-task-image-sized') %>
+    </div>
+  <% end %>
+
+  <div class=child-task-name-box>
+    <%= link_to @child.name, '#', class: 'child-task-name' %>さんのもくひょう
+  </div>
+
+  <% @task.each do |task| %>
+    <% if @child.id == task.child_id && task.child_id != nil %>
+      <ul class='child-task-ul'>
+        <li class='child-task-li' ><%= task.task1 %></li>
+        <li class='child-task-li' ><%= task.task2 %></li>
+        <li class='child-task-li' ><%= task.task3 %></li>
+        <li class='child-task-li' ><%= task.task4 %></li>
+        <li class='child-task-li' ><%= task.task5 %></li>
+        <li class='child-task-li' ><%= task.task6 %></li>
+      </ul>
+      <div class='child-task-henkou-box'>
+      <%= link_to "もくひょうをかえる", edit_child_task_path(@child.id,task.id), class: 'child-task-henkou' %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class='child-task-kettei-box'>
+    <%= link_to "もくひょうをきめる", new_child_task_path(@child.id), class:'child-task-kettei' %>
+  </div>
 </div>
