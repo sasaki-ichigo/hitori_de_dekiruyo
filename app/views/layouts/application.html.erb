@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HitoriDeDekiruyo</title>
+    <title>ひとりでできるよ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class='heading'>
+        <%= link_to image_tag("hitori_de_dekiruyo.png", class:'image-top'), "/" %>
+      </div>
+      <div class='navbar'>
+        <ul class='nav-lists'>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, edit_user_registration_path, class: 'user-name' %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout' %></li>
+          <% else %>
+            <li><%= link_to '新規登録', new_user_registration_path, class: 'sign-up' %></li>
+            <li><%= link_to 'ログイン', new_user_session_path, class: 'login' %></li>
+          <% end %>
+        </ul>
+      </div>
+  </header>
     <%= yield %>
   </body>
 </html>

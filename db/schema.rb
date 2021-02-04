@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_30_104940) do
+ActiveRecord::Schema.define(version: 2021_02_03_151758) do
+
+  create_table "children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "tree_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_children_on_user_id"
+  end
+
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "task1"
+    t.string "task2"
+    t.string "task3"
+    t.string "task4"
+    t.string "task5"
+    t.string "task6"
+    t.bigint "child_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["child_id"], name: "index_tasks_on_child_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +47,6 @@ ActiveRecord::Schema.define(version: 2021_01_30_104940) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "children", "users"
+  add_foreign_key "tasks", "children"
 end

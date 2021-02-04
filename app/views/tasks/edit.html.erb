@@ -1,0 +1,10 @@
+<%= form_with model: @task, url: child_task_path(@child.id,@task.id) do |f| %>
+<h1>もくひょうをかきこんでください</h1>
+<%= f.text_area :task1, placeholder:"あいさつ" %>
+<%= f.text_area :task2, placeholder:"トイレ" %>
+<%= f.text_area :task3, placeholder:"かおあらい" %>
+<%= f.text_area :task4, placeholder:"おきがえ" %>
+<%= f.text_area :task5, placeholder:"あさごはん" %>
+<%= f.text_area :task6, placeholder:"はみがき" %>
+<%= f.submit "けってい" %>
+<% end %>

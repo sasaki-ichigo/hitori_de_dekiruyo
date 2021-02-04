@@ -1,0 +1,6 @@
+<div>
+  <% @child.each do |child| %>
+  <%= link_to child.name, child_path(child.id) %>
+  <% end %>
+  <%= link_to 'つかうひとをついかする', new_child_path %>
+</div>
