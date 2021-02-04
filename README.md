@@ -45,31 +45,24 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | name            | string     | null: false                    |
-| honorific_title | string     | null: false                    |
+| tree_id         | integer    | null: false                    |
 | user            | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :tree
 - has_many :tasks
 
 ## tasks テーブル
 
-| Column | Type       | Options                        |
-| ------ | -----------| ------------------------------ |
-| task   | string     | null: false                    |
-| child  | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :child
-
-## trees テーブル
-
 | Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| tree_id | integer    | null: false                    |
+| ------- | -----------| ------------------------------ |
+| task1   | string     | null: false                    |
+| task2   | string     | null: false                    |
+| task3   | string     | null: false                    |
+| task4   | string     | null: false                    |
+| task5   | string     | null: false                    |
+| task6   | string     | null: false                    |
 | child   | references | null: false, foreign_key: true |
 
 ### Association

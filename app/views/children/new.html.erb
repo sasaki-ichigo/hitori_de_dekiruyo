@@ -1,0 +1,7 @@
+<%= form_with(model: @child, local: true) do |f| %>
+<h1>あなたのしたのなまえをおしえてください</h1>
+<%= f.text_area :name, placeholder:"なまえ" %>
+<h1>そだてたいきをえらんでください</h1>
+<%= f.collection_select(:tree_id, Tree.all, :id, :name, {}, {}) %>
+<%= f.submit "けってい" %>
+<% end %>

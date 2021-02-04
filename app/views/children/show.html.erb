@@ -1,0 +1,53 @@
+<%= @child.name %>さんのくだもの
+<div>
+<%= @child.tree.name %>
+</div>
+<% if @child.tree_id == 1 %>
+<div>
+いち
+<%= image_tag "kajuen_ringo.png" %>
+</div>
+<% end %>
+<% if @child.tree_id == 2 %>
+<div>
+に
+<%= image_tag "kajuen_budou.png" %>
+</div>
+<% end %>
+<% if @child.tree_id == 3 %>
+<div>
+さん
+<%= image_tag "banana_tree.png" %>
+</div>
+<% end %>
+<div>
+<%= @child.name %>さんのもくひょう
+</div>
+<% @task.each do |task| %>
+  <% if @child.id == task.child_id && task.child_id != nil %>
+    <div>
+    <%= task.task1 %>
+    </div>
+    <div>
+    <%= task.task2 %>
+    </div>
+    <div>
+    <%= task.task3 %>
+    </div>
+    <div>
+    <%= task.task4 %>
+    </div>
+    <div>
+    <%= task.task5 %>
+    </div>
+    <div>
+    <%= task.task6 %>
+    </div>
+    <div>
+    <%= link_to "もくひょうをかえる", edit_child_task_path(@child.id,task.id) %>
+    </div>
+  <% end %>
+<% end %>
+<div>
+<%= link_to "もくひょうをきめる", new_child_task_path(@child.id) %>
+</div>

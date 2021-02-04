@@ -1,2 +1,10 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class='sotowaku'>
+  <div class=image-waku>
+    <%= image_tag "kajuen_mix_top.png", class:'image-center' %>
+    <% if user_signed_in? %>
+      <div class='hajimeru-waku'>
+        <%= link_to 'はじめる', task_path(current_user.id), class: 'hajimeru' %>
+      </div>
+    <% end %>
+  </div>
+</div>
