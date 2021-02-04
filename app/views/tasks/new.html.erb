@@ -1,10 +1,16 @@
-<%= form_with model: @task, url: child_tasks_path(@child.id) do |f| %>
-<h1>もくひょうをかきこんでください</h1>
-<%= f.text_area :task1, placeholder:"あいさつ" %>
-<%= f.text_area :task2, placeholder:"トイレ" %>
-<%= f.text_area :task3, placeholder:"かおあらい" %>
-<%= f.text_area :task4, placeholder:"おきがえ" %>
-<%= f.text_area :task5, placeholder:"あさごはん" %>
-<%= f.text_area :task6, placeholder:"はみがき" %>
-<%= f.submit "けってい" %>
-<% end %>
+<div class='task-new'>
+  <div class='task-new-form' >
+    <%= form_with model: @task, url: child_tasks_path(@child.id) do |f| %>
+      <h1 class="task-new-page-heading">もくひょうをかきこんでください</h1>
+        <ul class='task-new-ul'>
+          <li><%= f.text_field :task1, placeholder:"あいさつ", class:'task-new-li' %></li>
+          <li><%= f.text_field :task2, placeholder:"トイレ", class:'task-new-li' %></li>
+          <li><%= f.text_field :task3, placeholder:"かおあらい", class:'task-new-li' %></li>
+          <li><%= f.text_field :task4, placeholder:"おきがえ", class:'task-new-li' %></li>
+          <li><%= f.text_field :task5, placeholder:"あさごはん", class:'task-new-li' %></li>
+          <li><%= f.text_field :task6, placeholder:"はみがき", class:'task-new-li' %></li>
+        </ul>
+      <%= f.submit "けってい", class:'task-new-submit' %>
+    <% end %>
+  </div>
+</div>

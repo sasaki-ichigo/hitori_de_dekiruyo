@@ -1,7 +1,13 @@
-<%= form_with(model: @child, local: true) do |f| %>
-<h1>あなたのしたのなまえをおしえてください</h1>
-<%= f.text_area :name, placeholder:"なまえ" %>
-<h1>そだてたいきをえらんでください</h1>
-<%= f.collection_select(:tree_id, Tree.all, :id, :name, {}, {}) %>
-<%= f.submit "けってい" %>
-<% end %>
+<div class='child-new'>
+  <div class='child-new-form' >
+    <%= form_with(model: @child, local: true) do |f| %>
+      <h1 class="child-new-page-heading">あなたのしたのなまえをおしえてください</h1>
+      <%= f.text_field :name, placeholder:"なまえ", class:'child-new-name' %>
+      <h1 class="child-new-page-heading">そだてたい「き」をえらんでください</h1>
+      <div>
+        <%= f.collection_select(:tree_id, Tree.all, :id, :name, {}, {class:'child-new-tree'}) %>
+      </div>
+      <%= f.submit "けってい", class:'child-new-submit' %>
+    <% end %>
+  </div>
+</div>

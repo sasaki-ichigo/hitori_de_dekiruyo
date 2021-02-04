@@ -1,6 +1,14 @@
-<div>
-  <% @child.each do |child| %>
-  <%= link_to child.name, child_path(child.id) %>
-  <% end %>
-  <%= link_to 'つかうひとをついかする', new_child_path %>
+<div class='child-show'>
+  <h2 class="page-heading">だれがつかいますか</h2>
+    <div class='child-box'>
+      <% @child.each do |child| %>
+      <div class='child-name-box'>
+        <%= link_to child.name, child_path(child.id), class: 'child-name' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class='child-add-box'>
+  <%= link_to 'つかうひとをついかする', new_child_path, class: 'child-add' %>
 </div>

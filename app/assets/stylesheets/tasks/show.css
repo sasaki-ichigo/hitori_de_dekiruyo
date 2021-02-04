@@ -1,0 +1,56 @@
+.child-show {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.child-box {
+  
+}
+
+.child-name-box {
+  margin-bottom: 40px;
+  
+}
+
+.child-add-box {
+  text-align: center;
+}
+
+.child-name {
+  font-size: 20px;
+  text-decoration: none;
+  color: #333333;
+  font-family: ヒラギノ丸ゴ ProN W4;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px ;
+}
+
+.child-add {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: ヒラギノ丸ゴ ProN W4;
+  font-weight: bold;
+  text-decoration: none;
+  user-select: none;
+  background: #8EDAE5;
+  border: 1px #8EDAE5 solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+  margin-top: 30px;
+}
+
+.child-name:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.child-add:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
